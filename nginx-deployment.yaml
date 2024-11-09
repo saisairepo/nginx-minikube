@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx-minikube:latest  # Use this if built directly in Minikube
+        image: nginx-minikube:v1.0  # Use this if built directly in Minikube
         # OR image: your-docker-username/nginx-minikube:latest if pushed to Docker Hub
         ports:
         - containerPort: 80
