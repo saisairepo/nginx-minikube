@@ -1,11 +1,14 @@
-# Use the official NGINX image from Docker Hub
-FROM nginx:latest
+FROM nginx:alpine
 
-# Copy HTML files to the default directory
-COPY . /usr/share/nginx/html
+# Install curl to download the image
+RUN apk add --no-cache curl
 
-# Copy the downloaded image
-ADD https://github.com/user-attachments/assets/950cb229-05ce-4400-95a8-fc801f60151a /usr/share/nginx/html/steph.jpg
+# Download the image into the correct location
+RUN curl -o /usr/share/nginx/html/steph.jpg https://github.com/user-attachments/assets/950cb229-05ce-4400-95a8-fc801f60151a
+
+# Copy HTML file
+COPY index.html /usr/share/nginx/html/index.html
+
 
 # Expose port 80
 EXPOSE 80
