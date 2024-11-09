@@ -26,10 +26,22 @@
             max-width: 80%; /* Scales down large images */
             border: 2px solid #0073e6; /* Optional border color */
         }
+
+        /* Center-aligns the audio player */
+        .center-audio {
+            display: block;
+            margin: 20px auto;
+        }
     </style>
 </head>
 <body>
     <h1>STEPHEN CURRY!</h1>
-   <img src="https://raw.githubusercontent.com/saisairepo/nginx-minikube/230139bd2f90fb5917fa5ad5ba15972f9ae46ef4/steph.jpg" alt="Sample image" class="center-image">
+    <img src="https://raw.githubusercontent.com/saisairepo/nginx-minikube/230139bd2f90fb5917fa5ad5ba15972f9ae46ef4/steph.jpg" alt="Sample image" class="center-image">
+
+    <!-- Adds audio player below the image -->
+    <audio controls class="center-audio">
+        <source src="https://raw.githubusercontent.com/saisairepo/nginx-minikube/743b37f606a288f35b14b197b5621f9dd90c5b0c/ROS%C3%89%20%26%20Bruno%20Mars%20-%20APT.%20(Official%20Lyric%20Video).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 </body>
 </html>
