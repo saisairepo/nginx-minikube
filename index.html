@@ -25,16 +25,16 @@
             margin: 20px auto;
             max-width: 80%; /* Scales down large images */
             border: 2px solid #0073e6; /* Optional border color */
-            animation: bounce 2s infinite; /* Apply the bounce animation */
+            animation: blink 1.5s infinite; /* Apply the blink animation */
         }
 
-        /* Keyframes for the bounce animation */
-        @keyframes bounce {
+        /* Keyframes for the blink animation */
+        @keyframes blink {
             0%, 100% {
-                transform: translateY(0); /* Start and end at the original position */
+                opacity: 1; /* Image fully visible */
             }
             50% {
-                transform: translateY(-20px); /* Move up 20px at the halfway point */
+                opacity: 0; /* Image fully invisible */
             }
         }
 
