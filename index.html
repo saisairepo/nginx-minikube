@@ -34,6 +34,7 @@
             border: 2px solid #0073e6;
             filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)); /* Initial glow effect */
             animation: floatImage 5s ease-in-out infinite, pulseGlow 3s ease-in-out infinite, zoomIn 3s ease-out infinite;
+            z-index: 2; /* Make sure the image appears above the snake */
         }
 
         /* Keyframes for floating image effect */
@@ -117,6 +118,24 @@
             top: 30%; left: 70%; width: 80px; height: 80px; animation-duration: 13s; animation-delay: 2.5s;
         }
 
+        /* Snake animation */
+        .snake {
+            position: absolute;
+            top: 50%;
+            left: -150px;
+            width: 200px;
+            height: 50px;
+            background: url('https://www.w3schools.com/w3images/snake.jpg') repeat-x;
+            animation: snakeMove 15s linear infinite;
+            z-index: 1; /* Snake is behind the image */
+        }
+
+        /* Keyframes for snake movement */
+        @keyframes snakeMove {
+            0% { transform: translateX(-150px); }
+            100% { transform: translateX(100%); }
+        }
+
         /* Center-aligns the audio player */
         .center-audio {
             display: block;
@@ -138,7 +157,10 @@
 
     <!-- Cloud Background -->
     <div class="clouds"></div>
-   
+
+    <!-- Snake Animation -->
+    <div class="snake"></div>
+
     <!-- Updated image URL -->
     <img src="https://raw.githubusercontent.com/saisairepo/nginx-minikube/dcc06d19d0259d4e79a8f9a145b53c868d55f45f/steph.jpg" alt="In Memory" class="center-image">
 
