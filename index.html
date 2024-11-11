@@ -10,6 +10,7 @@
             background-color: #f0f8ff; /* Light blue background */
             color: #333; /* Dark text for readability */
             font-family: Arial, sans-serif;
+            overflow: hidden;
         }
 
         /* Styles the heading with color */
@@ -19,22 +20,33 @@
             padding-top: 20px;
         }
 
-        /* Styles the image and adds animation */
+        /* Styles the image and adds a "heavenly" animation */
         .center-image {
             display: block;
             margin: 20px auto;
             max-width: 80%; /* Scales down large images */
             border: 2px solid #0073e6; /* Optional border color */
-            animation: blink 1.5s infinite; /* Apply the blink animation */
+            animation: floatAndGlow 4s infinite ease-in-out, fadeInOut 8s infinite; /* Apply the float and fade animations */
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7)); /* Soft glow effect */
         }
 
-        /* Keyframes for the blink animation */
-        @keyframes blink {
+        /* Keyframes for the floating and glowing effect */
+        @keyframes floatAndGlow {
             0%, 100% {
-                opacity: 1; /* Image fully visible */
+                transform: translateY(0); /* Start and end at the original position */
             }
             50% {
-                opacity: 0; /* Image fully invisible */
+                transform: translateY(-10px); /* Float up 10px at the halfway point */
+            }
+        }
+
+        /* Keyframes for fading in and out to create an ethereal effect */
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0.7; /* Semi-transparent */
+            }
+            50% {
+                opacity: 1; /* Fully visible at the halfway point */
             }
         }
 
