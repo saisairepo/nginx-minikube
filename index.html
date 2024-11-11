@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAII testing on Minikube</title>
     <style>
-        /* Adds a background resembling a heavenly sky */
+        /* Adds a forest background */
         body {
-            background: linear-gradient(to bottom, #cce7ff, #f0f8ff); /* Light blue gradient */
-            color: #333;
+            background: url('https://www.w3schools.com/w3images/forest.jpg') no-repeat center center fixed; /* Forest image background */
+            background-size: cover; /* Make sure it covers the full page */
+            color: #fff; /* White text for contrast */
             font-family: Arial, sans-serif;
             overflow: hidden;
             margin: 0;
@@ -19,9 +20,10 @@
 
         /* Styles the heading with color */
         h1 {
-            color: #0073e6; /* Blue text */
+            color: #fff; /* White text */
             text-align: center;
             padding-top: 20px;
+            font-size: 3rem; /* Make the heading larger */
         }
 
         /* Styles the image with a soft glow and floating effect */
@@ -31,7 +33,7 @@
             max-width: 50%;
             border: 2px solid #0073e6;
             filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)); /* Initial glow effect */
-            animation: floatImage 5s ease-in-out infinite, pulseGlow 3s ease-in-out infinite;
+            animation: floatImage 5s ease-in-out infinite, pulseGlow 3s ease-in-out infinite, zoomIn 3s ease-out infinite;
         }
 
         /* Keyframes for floating image effect */
@@ -46,7 +48,13 @@
             50% { filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1)); }
         }
 
-        /* Cloud background animation */
+        /* Keyframes for zooming image effect */
+        @keyframes zoomIn {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Cloud background animation (optional) */
         .clouds {
             position: absolute;
             top: 0;
