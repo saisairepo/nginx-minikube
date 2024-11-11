@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAII testing on Minikube</title>
     <style>
-        /* Adds a background color */
+        /* Adds a background color resembling a sky */
         body {
-            background-color: #f0f8ff; /* Light blue background */
+            background: linear-gradient(to bottom, #a0eaff, #f0f8ff); /* Light blue gradient background */
             color: #333; /* Dark text for readability */
             font-family: Arial, sans-serif;
+            overflow: hidden;
         }
 
         /* Styles the heading with color */
@@ -19,32 +20,22 @@
             padding-top: 20px;
         }
 
-        /* Styles the image and applies a "death" animation */
+        /* Styles the image and applies a "floating in clouds" animation */
         .center-image {
             display: block;
             margin: 20px auto;
             max-width: 80%; /* Scales down large images */
             border: 2px solid #0073e6; /* Optional border color */
-            animation: fadeToBlackAndWhite 5s forwards, disappear 7s forwards; /* Sequential animations */
+            animation: float 5s ease-in-out infinite; /* Apply the floating animation */
         }
 
-        /* Keyframes for the grayscale fade effect */
-        @keyframes fadeToBlackAndWhite {
-            0% {
-                filter: grayscale(0%); /* Start in full color */
+        /* Keyframes for the floating effect */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0); /* Starting and ending at the original position */
             }
-            100% {
-                filter: grayscale(100%); /* End in grayscale */
-            }
-        }
-
-        /* Keyframes for the fade-out effect */
-        @keyframes disappear {
-            0% {
-                opacity: 1; /* Fully visible */
-            }
-            100% {
-                opacity: 0; /* Fully transparent */
+            50% {
+                transform: translateY(-20px); /* Moving up by 20px to simulate floating */
             }
         }
 
