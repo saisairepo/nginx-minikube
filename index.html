@@ -22,13 +22,26 @@
             padding-top: 20px;
         }
 
-        /* Styles the image with a soft glow */
+        /* Styles the image with a soft glow and floating effect */
         .center-image {
             display: block;
             margin: 20px auto;
             max-width: 50%;
             border: 2px solid #0073e6;
             filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)); /* Initial glow effect */
+            animation: floatImage 5s ease-in-out infinite, pulseGlow 3s ease-in-out infinite;
+        }
+
+        /* Keyframes for floating image effect */
+        @keyframes floatImage {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Keyframes for pulsing glow effect */
+        @keyframes pulseGlow {
+            0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)); }
+            50% { filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1)); }
         }
 
         /* Container for floating "angel orbs" */
@@ -52,11 +65,10 @@
             animation: floatOrb 8s ease-in-out infinite;
         }
 
-        /* Keyframes for floating effect */
+        /* Keyframes for floating orb effect */
         @keyframes floatOrb {
-            0% { transform: translateY(0) translateX(0); opacity: 0.8; }
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0.8; }
             50% { transform: translateY(-20px) translateX(10px); opacity: 1; }
-            100% { transform: translateY(0) translateX(0); opacity: 0.8; }
         }
 
         /* Randomly position and size each orb */
