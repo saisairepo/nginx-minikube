@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAII testing on Minikube</title>
     <style>
-        /* Adds a background color resembling a sky */
+        /* Adds a background resembling a heavenly sky */
         body {
-            background: linear-gradient(to bottom, #a0eaff, #f0f8ff); /* Light blue gradient background */
-            color: #333; /* Dark text for readability */
+            background: linear-gradient(to bottom, #cce7ff, #f0f8ff); /* Light blue gradient */
+            color: #333;
             font-family: Arial, sans-serif;
             overflow: hidden;
         }
@@ -20,26 +20,48 @@
             padding-top: 20px;
         }
 
-        /* Styles the image and applies a "floating in clouds" animation */
+        /* Styles the image and adds the "heavenly death" animation */
         .center-image {
             display: block;
             margin: 20px auto;
-            max-width: 80%; /* Scales down large images */
-            border: 2px solid #0073e6; /* Optional border color */
-            animation: float 5s ease-in-out infinite; /* Apply the floating animation */
+            max-width: 50%; /* Scales down large images */
+            border: 2px solid #0073e6;
+            animation: float 6s ease-in-out infinite, fadeToGray 8s forwards, glow 4s infinite; /* Multiple animations */
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)); /* Initial glow effect */
+            transition: transform 6s, opacity 6s;
         }
 
-        /* Keyframes for the floating effect */
+        /* Keyframes for the grayscale fade effect */
+        @keyframes fadeToGray {
+            0% {
+                filter: grayscale(0%) brightness(100%);
+            }
+            100% {
+                filter: grayscale(100%) brightness(150%); /* Fully grayscale with brightness to enhance the effect */
+            }
+        }
+
+        /* Keyframes for the gentle floating effect */
         @keyframes float {
             0%, 100% {
-                transform: translateY(0); /* Starting and ending at the original position */
+                transform: translateY(0);
             }
             50% {
-                transform: translateY(-20px); /* Moving up by 20px to simulate floating */
+                transform: translateY(-15px);
             }
         }
 
-        /* Center-aligns the audio player */
+        /* Keyframes for the glowing effect */
+        @keyframes glow {
+            0%, 100% {
+                filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9));
+            }
+            50% {
+                filter: drop-shadow(0 0 30px rgba(255, 255, 255, 1));
+            }
+        }
+
+        /* Styles the audio player */
         .center-audio {
             display: block;
             margin: 20px auto;
@@ -47,8 +69,8 @@
     </style>
 </head>
 <body>
-    <h1>STEPHEN CURRY!</h1>
-    <img src="https://raw.githubusercontent.com/saisairepo/nginx-minikube/230139bd2f90fb5917fa5ad5ba15972f9ae46ef4/steph.jpg" alt="Sample image" class="center-image">
+    <h1>In Loving Memory</h1>
+    <img src="https://raw.githubusercontent.com/saisairepo/nginx-minikube/230139bd2f90fb5917fa5ad5ba15972f9ae46ef4/steph.jpg" alt="In Memory" class="center-image">
 
     <!-- Adds audio player below the image -->
     <audio controls class="center-audio">
