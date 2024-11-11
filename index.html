@@ -3,45 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAII testing on Minikube</title>
-    <style>
-        /* Adds a background resembling a heavenly sky */
-        body {
-            background: linear-gradient(to bottom, #cce7ff, #f0f8ff); /* Light blue gradient */
-            color: #333;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
-
-        /* Styles the heading with color */
-        h1 {
-            color: #0073e6; /* Blue text */
-            text-align: center;
-            padding-top: 20px;
-        }
-
-        /* Styles the image without animations */
-        .center-image {
-            display: block;
-            margin: 20px auto;
-            max-width: 50%; /* Scales down large images */
-            border: 2px solid #0073e6; /* Optional border color */
-        }
-
-        /* Styles the audio player */
-        .center-audio {
-            display: block;
-            margin: 20px auto;
-        }
-    </style>
+    <title>Animated Image</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>In Loving Memory</h1>
-    <img src="https://raw.githubusercontent.com/saisairepo/nginx-minikube/230139bd2f90fb5917fa5ad5ba15972f9ae46ef4/steph.jpg" alt="In Memory" class="center-image">
+    <h1>Animated Image from MySQL</h1>
+    <div id="image-container"></div>
 
-    <!-- Adds audio player below the image -->
-    <audio controls class="center-audio">
-        <source src="https://raw.githubusercontent.com/saisairepo/nginx-minikube/743b37f606a288f35b14b197b5621f9dd90c5b0c/ROS%C3%89%20%26%20Bruno%20Mars%20-%20APT.%20(Official%20Lyric%20Video).mp3?raw=true" type="audio/mpeg">
-    </audio>
+    <script>
+        // Fetch image data from backend and display it
+        fetch('/image')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('image-container');
+                container.innerHTML = `<img src="${data.url}" alt="${data.description}">`;
+            });
+    </script>
 </body>
 </html>
