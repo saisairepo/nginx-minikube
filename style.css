@@ -1,8 +1,10 @@
 body {
   font-family: system-ui;
-  background: #f06d06; /* Set a solid background color */
+  background: #f06d06 !important; /* Ensure the background color is applied */
   color: white;
   text-align: center;
+  margin: 0;
+  height: 100vh; /* Ensure body takes full height */
 }
 
 * {
