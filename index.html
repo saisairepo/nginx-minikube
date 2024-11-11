@@ -10,7 +10,6 @@
             background-color: #f0f8ff; /* Light blue background */
             color: #333; /* Dark text for readability */
             font-family: Arial, sans-serif;
-            overflow: hidden;
         }
 
         /* Styles the heading with color */
@@ -20,33 +19,32 @@
             padding-top: 20px;
         }
 
-        /* Styles the image and adds a "heavenly" animation */
+        /* Styles the image and applies a "death" animation */
         .center-image {
             display: block;
             margin: 20px auto;
             max-width: 80%; /* Scales down large images */
             border: 2px solid #0073e6; /* Optional border color */
-            animation: floatAndGlow 4s infinite ease-in-out, fadeInOut 8s infinite; /* Apply the float and fade animations */
-            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7)); /* Soft glow effect */
+            animation: fadeToBlackAndWhite 5s forwards, disappear 7s forwards; /* Sequential animations */
         }
 
-        /* Keyframes for the floating and glowing effect */
-        @keyframes floatAndGlow {
-            0%, 100% {
-                transform: translateY(0); /* Start and end at the original position */
+        /* Keyframes for the grayscale fade effect */
+        @keyframes fadeToBlackAndWhite {
+            0% {
+                filter: grayscale(0%); /* Start in full color */
             }
-            50% {
-                transform: translateY(-10px); /* Float up 10px at the halfway point */
+            100% {
+                filter: grayscale(100%); /* End in grayscale */
             }
         }
 
-        /* Keyframes for fading in and out to create an ethereal effect */
-        @keyframes fadeInOut {
-            0%, 100% {
-                opacity: 0.7; /* Semi-transparent */
+        /* Keyframes for the fade-out effect */
+        @keyframes disappear {
+            0% {
+                opacity: 1; /* Fully visible */
             }
-            50% {
-                opacity: 1; /* Fully visible at the halfway point */
+            100% {
+                opacity: 0; /* Fully transparent */
             }
         }
 
